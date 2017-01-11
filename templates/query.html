@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>Query</h2>
+  {% if error %}<p class="error"><strong>Error:</strong> {{ error }}{% endif %}
+  <form action="{{ url_for('query') }}" method="post">
+    <dl>
+      <dt>Query:
+      <dd><input type="text" name="query">
+      <dd><input type="submit" value="Submit">
+    </dl>
+  </form>
+  {% if jsonVal %}<h3> {{jsonVal}} </h3> {% endif %}
+{% endblock %}
